@@ -3,6 +3,23 @@ Write and use a function (iterative or recursive) which finds a given element
 in the monotonically increasing OR decreasing sequence of (signed) integers. The function should
 return the index of the found element, or −1 if it doesn’t exist in the sequence.
 (Indices in the sequence should be counted starting from 0)
+
+Example input:
+3
+5
+5 4 3 2 1
+1
+5
+10
+1 2 4 8 16 32 64 128 256 512
+2
+128
+129
+5
+-100 -50 -1 0 10000
+1
+-1
+
 */
 
 #include <iostream>
