@@ -1,6 +1,11 @@
 /*
 Calculate the value of an expression in postfix notation (RPN). Three operators are used: N (negation),
 K (conjunction), A (alternative) and two logic values: t (true) and f (false).
+
+Example input:
+2
+tttfKKK
+tfAN
 */
 
 #include <iostream>
