@@ -1,6 +1,14 @@
+/*
+Position in sequence
+
+Write and use a function (iterative or recursive, the teacher will decide) which finds a given element
+in the monotonically increasing OR decreasing sequence of (signed) integers. The function should
+return the index of the found element, or −1 if it doesn’t exist in the sequence.
+(Indices in the sequence should be counted starting from 0)
+*/
+
 #include <iostream>
 using namespace std;
-
 
 int main()
 {
