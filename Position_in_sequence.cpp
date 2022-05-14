@@ -10,6 +10,43 @@ return the index of the found element, or −1 if it doesn’t exist in the sequ
 #include <iostream>
 using namespace std;
 
+int increasingsequence(int arr[], int b, int x)
+{
+        int a = 0;
+        while (a <= b) {
+                int c = a + (b - a) / 2;
+
+                if (arr[c] == x)
+                        return c;
+
+                if (arr[c] < x)
+                        a = c + 1;
+
+                else
+                        b = c - 1;
+        }
+        return -1;
+}
+
+int decreasingsequence(int arr[], int b, int x)
+{
+        int a = 0;
+        while (a <= b) {
+                int c = a + (b - a) / 2;
+
+                if (arr[c] == x)
+                        return c;
+
+                if (arr[c] > x)
+                        a = c + 1;
+
+                else
+                        b = c - 1;
+        }
+        return -1;
+}
+
+
 int main()
 {
         int m; //number of test scenario
@@ -37,41 +74,23 @@ int main()
                 }
                 if (sequence[1] > sequence[0]) {
                         for (int j = 0; j < p; j++) {
-                                if (tofound[j] < sequence[0]) {
-                                        l++;
-                                }
-                                else {
-                                        for (int h = 0; h < n; h++) {
-                                                if (tofound[j] == sequence[h]) {
-                                                        answer[l] = h;
-                                                        break;
-                                                }
-                                        }
-                                        l++;
-                                }
+                                int result = increasingsequence(sequence, n - 1, tofound[j]);
+                                answer[l] = result;
+                                l++;
                         }
                 }
-                else if (sequence[1] < sequence[0]) {    
+                else {
                         for (int j = 0; j < p; j++) {
-                                if (tofound[j] > sequence[0]) {
-                                        l++;
-                                }
-                                else {
-                                        for (int h = 0; h < n; h++) {
-                                                if (tofound[j] == sequence[h]) {
-                                                        answer[l] = h;
-                                                        break;
-                                                }
-                                        }
-                                        l++;
-                                }
+                                int result = decreasingsequence(sequence, n - 1, tofound[j]);
+                                answer[l] = result;
+                                l++;
                         }
                 }
         }
 
         for (int j = 0; j < elements; j++)
         {
-                cout << answer[j] << endl;;
+                cout << answer[j] << endl;
         }
         
 }
